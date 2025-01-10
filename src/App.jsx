@@ -16,28 +16,28 @@ export const goods = [
 ];
 
 export const App = () => {
-  const [selectedGood, setSelectedGood] = useState('Jam');
+  const [selectedGood, setSelectedGood] = useState('Jam'); // Default selected good is "Jam"
 
   return (
     <main className="section container">
-      {}
+      {/* Title */}
       <h1 className="title is-flex is-align-items-center">
-        {setSelectedGood ? (
+        {selectedGood ? (
           <>
             {selectedGood} is selected
             <button
               data-cy="ClearButton"
               type="button"
               className="delete ml-3"
-              onClick={() => setSelectedGood('')}
+              onClick={() => setSelectedGood('')} // Clear the selection
             />
           </>
         ) : (
           'No goods selected'
         )}
       </h1>
-      {}
 
+      {/* Goods Table */}
       <table className="table">
         <tbody>
           {goods.map(good => (
